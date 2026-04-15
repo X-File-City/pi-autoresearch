@@ -1,0 +1,145 @@
+{
+  "id": "pi-autoresearch-onboarding",
+  "title": "pi-autoresearch Tour",
+  "description": "Walk through the extension, skills, and dashboard that power pi's autonomous experiment loop.",
+  "version": "1.0.0",
+  "audience": "New Developers",
+  "prerequisites": [
+    "Familiarity with pi (pi.dev) extensions and skills"
+  ],
+  "steps": [
+    {
+      "id": "step-1-overview",
+      "title": "Project Overview",
+      "description": "pi-autoresearch gives pi an autonomous optimize-measure-keep-or-revert loop. The repo splits into a runtime extension, two skills, a dashboard template, and tests.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-2-extension",
+      "title": "The Extension Runtime",
+      "description": "A single runtime module is the source of truth for the extension. It registers the experiment tools, renders the live status widget above the editor, and implements the autoresearch command with its on, off, clear, and export modes.",
+      "estimatedTime": 120,
+      "focusDirectory": "extensions",
+      "highlightLayers": [
+        {
+          "id": "extension-core",
+          "name": "Extension entry",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "extensions/pi-autoresearch/index.ts", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-3-skills",
+      "title": "Skills: Create & Finalize",
+      "description": "Two skills bracket the loop. The first bootstraps a session — goal, command, metric, and files in scope — and kicks the loop off. The second takes a noisy experiment branch at the end and splits it into clean, independently reviewable branches.",
+      "estimatedTime": 120,
+      "focusDirectory": "skills",
+      "highlightLayers": [
+        {
+          "id": "skill-create",
+          "name": "autoresearch-create",
+          "color": "#10b981",
+          "items": [
+            { "path": "skills/autoresearch-create", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "skill-finalize",
+          "name": "autoresearch-finalize",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "skills/autoresearch-finalize", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-4-dashboard",
+      "title": "Dashboard & Assets",
+      "description": "The live dashboard opened by autoresearch export lives here as a templated page that auto-updates in the browser as experiments run, alongside the project logo.",
+      "estimatedTime": 60,
+      "focusDirectory": "assets",
+      "highlightLayers": [
+        {
+          "id": "dashboard-template",
+          "name": "Dashboard template",
+          "color": "#a855f7",
+          "items": [
+            { "path": "assets/template.html", "type": "file" },
+            { "path": "assets/logo.webp", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-5-tests",
+      "title": "Tests",
+      "description": "An end-to-end test exercises the branch-splitting logic that turns messy experiment history into reviewable pull requests — the critical path for finalizing a session.",
+      "estimatedTime": 45,
+      "focusDirectory": "tests",
+      "highlightLayers": [
+        {
+          "id": "tests-layer",
+          "name": "Finalize test",
+          "color": "#ef4444",
+          "items": [
+            { "path": "tests/finalize_test.sh", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-6-config",
+      "title": "Configuration & Docs",
+      "description": "The manifest declares the extension so pi can install it, and the readme walks through the full workflow, keyboard shortcuts, and examples.",
+      "estimatedTime": 45,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "config-layer",
+          "name": "Config & docs",
+          "color": "#06b6d4",
+          "items": [
+            { "path": "package.json", "type": "file" },
+            { "path": "README.md", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-7-recap",
+      "title": "Full Codebase Recap",
+      "description": "You've seen the runtime, the skills that bracket each session, the live dashboard, the finalize test, and the project manifest. From here, try the autoresearch command in pi or head back to the readme for install details.",
+      "estimatedTime": 30,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    }
+  ],
+  "metadata": {
+    "author": "pi-autoresearch",
+    "createdAt": "2026-04-15T00:00:00.000Z",
+    "tags": ["onboarding", "pi", "autoresearch"]
+  }
+}
